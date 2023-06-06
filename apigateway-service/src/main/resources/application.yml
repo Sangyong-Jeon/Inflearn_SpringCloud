@@ -20,6 +20,10 @@ spring:
             preLogger: true
             postLogger: true
       routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/**
         - id: first-service # 고유 이름
           uri: lb://MY-FIRST-SERVICE # 포워딩 주소
           predicates: # 조건
