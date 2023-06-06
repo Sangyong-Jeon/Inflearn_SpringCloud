@@ -1,4 +1,4 @@
-package com.example.userservice.controller.vo;
+package com.example.userservice.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
