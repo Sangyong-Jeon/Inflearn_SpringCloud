@@ -5,9 +5,9 @@ import com.example.userservice.service.UserService;
 import com.example.userservice.vo.Greeting;
 import com.example.userservice.vo.RequestUser;
 import com.example.userservice.vo.ResponseUser;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,18 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
+@RequiredArgsConstructor
 public class UserController {
 
     private final Environment env;
     private final UserService userService;
-
-    @Autowired
-    private Greeting greeting;
-
-    public UserController(Environment env, UserService userService) {
-        this.env = env;
-        this.userService = userService;
-    }
+    private final Greeting greeting;
 
     @GetMapping("/health_check")
     public String status() {
@@ -49,9 +43,9 @@ public class UserController {
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
         UserDto userDto = mapper.map(user, UserDto.class);
-        userService.createUser(userDto);
+        UserDto resultUserDto = userService.createUser(userDto);
 
-        ResponseUser responseUser = mapper.map(userDto, ResponseUser.class);
+        ResponseUser responseUser = mapper.map(resultUserDto, ResponseUser.class);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
     }
