@@ -5,20 +5,16 @@ spring:
   cloud:
     config:
       name: ecommerce
-
   config:
     import: optional:configserver:http://localhost:8888
-
   application:
     name: user-service
-
   h2:
     console:
       enabled: true
       settings:
         web-allow-others: true
       path: /h2-console
-
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb
