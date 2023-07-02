@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   profiles:
     active: native
   cloud:
@@ -16,3 +21,9 @@ spring:
 #          uri: file:///Users/yong/Documents/GitHub/Inflearn_SpringCloud/springcloud-config
 #          username:
 #          password:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
