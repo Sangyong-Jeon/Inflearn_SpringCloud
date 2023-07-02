@@ -8,4 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///Users/yong/Documents/GitHub/Inflearn_SpringCloud/springcloud-config
+          uri: https://github.com/Sangyong-Jeon/spring-cloud-config.git
+#          uri: file:///Users/yong/Documents/GitHub/Inflearn_SpringCloud/springcloud-config
+#          username:
+#          password:
