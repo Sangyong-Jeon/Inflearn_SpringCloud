@@ -10,7 +10,7 @@ spring:
     password: guest
   cloud:
     config:
-      name: config-service
+      name: user-service
 #  profiles:
 #    active: dev
   config:
@@ -21,9 +21,10 @@ spring:
       settings:
         web-allow-others: true
       path: /h2-console
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
+# native-file-repo 폴더의 user-service.yml 속성으로 datasource 정보 옮김
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:testdb
 #    username: sa
 #    password: 1234
 
