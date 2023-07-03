@@ -2,7 +2,11 @@ server:
   port: 8888
 
 encrypt:
-  key: abcdefghijklmnopqrstuvwxyz0123456789
+#  key: abcdefghijklmnopqrstuvwxyz0123456789
+  key-store:
+    location: file://${user.home}/Documents/GitHub/Inflearn_SpringCloud/keystore/apiEncryptionKey.jks
+    password: test1234
+    alias: apiEncryptionKey
 
 spring:
   application:

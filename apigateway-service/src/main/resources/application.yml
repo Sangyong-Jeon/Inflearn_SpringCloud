@@ -21,7 +21,7 @@ spring:
 #    active: dev
   cloud:
     config:
-      name: config-service
+      name: ecommerce
     gateway:
       default-filters:
         - name: GlobalFilter
@@ -102,3 +102,6 @@ management:
     web:
       exposure:
         include: refresh, health, beans, httptrace, busrefresh
+
+#token:
+#  secret: user_token
