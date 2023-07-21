@@ -46,3 +46,10 @@ eureka:
 logging:
   level:
     com.example.com.example.orderservice: debug
+
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: health, httptrace, info, metrics, prometheus

@@ -34,7 +34,8 @@ public class WebSecurity {
                 .requestMatchers(PathRequest.toH2Console()).permitAll()
                 .antMatchers("/actuator/**").permitAll()
                 .antMatchers("/error/**").permitAll()
-                .antMatchers(WHITE_LIST).hasIpAddress("192.168.0.26")
+                .antMatchers(WHITE_LIST).permitAll() // 전부 허용
+//                .antMatchers(WHITE_LIST).hasIpAddress("192.168.0.26") // IP 제한
                 .and()
                 .addFilter(getAuthenticationFilter());
 

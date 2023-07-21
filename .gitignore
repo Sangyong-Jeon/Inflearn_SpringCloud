@@ -1,3 +1,5 @@
 .DS_Store
 *.log
 kafka_demo/
+grafana-10.0.2/
+prometheus-2.46.0-rc.0.darwin-amd64/
