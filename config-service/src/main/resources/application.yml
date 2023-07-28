@@ -4,7 +4,8 @@ server:
 encrypt:
 #  key: abcdefghijklmnopqrstuvwxyz0123456789
   key-store:
-    location: file://${user.home}/Documents/GitHub/Inflearn_SpringCloud/keystore/apiEncryptionKey.jks
+#    location: file://${user.home}/Documents/GitHub/Inflearn_SpringCloud/keystore/apiEncryptionKey.jks
+    location: file:apiEncryptionKey.jks
     password: test1234
     alias: apiEncryptionKey
 
@@ -24,8 +25,8 @@ spring:
         native:
           search-locations: file://${user.home}/Documents/GitHub/Inflearn_SpringCloud/native-file-repo
         git:
-          uri: https://github.com/Sangyong-Jeon/spring-cloud-config.git
 #          uri: file:///Users/yong/Documents/GitHub/Inflearn_SpringCloud/springcloud-config
+          uri: https://github.com/Sangyong-Jeon/spring-cloud-config
 #          username:
 #          password:
 
