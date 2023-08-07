@@ -23,12 +23,12 @@ spring:
     generate-ddl: true
     defer-datasource-initialization: true
   datasource:
-#    url: jdbc:mysql://localhost:3306/mydb
-#    username: root
-#    password: 1234
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:testdb
   sql:
     init:
       mode: always
@@ -37,7 +37,7 @@ spring:
 
 eureka:
   instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     register-with-eureka: true # Eureka ????? ?????? ??? ????? ??? ???? true? ??? ??? ???? ???
     fetch-registry: true
