@@ -36,6 +36,7 @@ public class WebSecurity {
                 .antMatchers("/error/**").permitAll()
                 .antMatchers(WHITE_LIST).permitAll() // 전부 허용
 //                .antMatchers(WHITE_LIST).hasIpAddress("192.168.0.26") // IP 제한
+//                .antMatchers(WHITE_LIST).hasIpAddress(env.getProperty("gateway.ip")) // IP 제한
                 .and()
                 .addFilter(getAuthenticationFilter());
 
